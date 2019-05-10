@@ -48,8 +48,9 @@ public class AppiumDriverSetup {
 
 	public static void startAppiumServer() {
 		try {
-			CommandLine command = new CommandLine("/Applications/Appium.app/Contents/Resources/node/bin/node");
-			command.addArgument("/Applications/Appium.app/Contents/Resources/node_modules/appium/bin/appium.js", false);
+			CommandLine command = new CommandLine(System.getProperty("nodeJs"));
+			command.addArgument(System.getProperty("ApiumJs"), false);
+			command.addArgument(System.getProperty("androidHome"));
 			command.addArgument("--address", false);
 			command.addArgument("0.0.0.0");
 			command.addArgument("--port", false);
